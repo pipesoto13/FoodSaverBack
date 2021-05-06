@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "root",
+    "password": "1111",
     "database": "FoodSaverDB",
     "host": "127.0.0.1",
     "dialect": "postgres"
