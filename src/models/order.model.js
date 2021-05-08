@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
   Order.associate = (db) => {
     db.Order.belongsToMany(db.Product, { through: 'OrderProduct' })
     db.Order.belongsTo(db.Client)
-    //db.Order.belongsTo(db.Seller)
   }
 
   return Order

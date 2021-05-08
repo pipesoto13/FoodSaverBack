@@ -31,7 +31,6 @@ module.exports = (sequelize, DataTypes) => {
 
   Seller.associate = (db) => {
     db.Seller.hasMany(db.Product)
-    //db.Seller.hasMany(db.Order)
   }
 
   return Seller

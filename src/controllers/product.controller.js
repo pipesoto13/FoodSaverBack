@@ -20,5 +20,12 @@ module.exports = {
       .findAll()
 
     res.status(200).json(products)
-  }
+  },
+  async destroy(req, res) {
+    const { productId } = req.params
+    console.log(productId);
+    const product = await Product.findByPk(productId)
+    await product.destroy()
+    res.status(200).json(product)
+  },
 }

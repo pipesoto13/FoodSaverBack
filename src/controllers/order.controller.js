@@ -1,4 +1,4 @@
-const { Order, Product, Client, Seller } = require('../models')
+const { Order, Product, Client} = require('../models')
 
 module.exports = {
   async create(req, res) {
@@ -6,19 +6,18 @@ module.exports = {
 
     const order = await Order.create(
       body,
-      { include: [Product, Client/* , Seller */] }
+      { include: [Product, Client] }
     )
     console.log(Order)
 
     order.setProducts(body.productId)
     order.setClient(body.clientId)
-    //order.setSeller(body.sellerId)
 
     res.status(201).json(order)
   },
   async list(req, res) {
     const orders = await Order
-      .scope({ include: [Product, Client/* , Seller */] })
+      .scope({ include: [Product, Client] })
       .findAll()
 
     res.status(200).json(orders)
