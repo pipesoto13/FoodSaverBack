@@ -20,6 +20,22 @@ module.exports = {
           type: Sequelize.DataTypes.STRING,
           allowNull: false,
         },
+        description: {
+          type: Sequelize.DataTypes.STRING,
+          allowNull: true,
+        },
+        price: {
+          type: Sequelize.DataTypes.FLOAT,
+          allowNull: true,
+        },
+        weight: {
+          type: Sequelize.DataTypes.FLOAT,
+          allowNull: true,
+        },
+        expDate: {
+          type: Sequelize.DataTypes.DATEONLY,
+          allowNull: true,
+        },
         SellerId: Sequelize.DataTypes.INTEGER,
         createdAt: Sequelize.DataTypes.DATE,
         updatedAt: Sequelize.DataTypes.DATE,
