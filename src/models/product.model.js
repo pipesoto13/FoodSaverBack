@@ -3,7 +3,23 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    price: {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+    },
+    weight: {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+    },
+    expDate: {
+      type: DataTypes.DATEONLY,
+      allowNull: true,
+    },
   }
 
   const productOps = {

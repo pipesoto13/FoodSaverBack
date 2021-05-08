@@ -28,4 +28,10 @@ module.exports = {
     await product.destroy()
     res.status(200).json(product)
   },
+  async update(req, res) {
+    const { body, params: { productId } } = req
+    let product = await Product.findByPk(productId)
+    product = await product.update(body)
+    res.status(200).json(product)
+  },
 }
