@@ -25,12 +25,12 @@ module.exports = (sequelize, DataTypes) => {
 
   const Client = sequelize.define('Client', userSchema, userOps)
 
-/*   Client.associate = (db) => {
-    db.User.hasMany(db.Product)
+  Client.associate = (db) => {
+    db.Client.hasMany(db.Order)
     // db.User.belongsToMany(db.Product, { through: 'UserProduct' })
     // db.User.hasOne(db.Recipe)
     // db.User.hasOne(db.Profile)
-  } */
+  }
 
   return Client
 }

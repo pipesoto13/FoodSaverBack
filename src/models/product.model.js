@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Product.associate = (db) => {
     db.Product.belongsTo(db.Seller)
+    db.Product.hasOne(db.Order)
   }
 
   return Product
