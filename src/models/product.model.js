@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define('Product', productSchema, productOps)
 
   Product.associate = (db) => {
-    db.Product.belongsTo(db.Seller)
+    db.Product.belongsTo(db.User)
     db.Product.hasOne(db.Order)
   }
 
