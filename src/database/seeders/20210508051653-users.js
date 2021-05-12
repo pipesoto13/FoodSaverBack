@@ -1,11 +1,12 @@
 'use strict';
 const faker = require('faker')
 
-const clients = Array.from({ length: 10 }, () => {
+const users = Array.from({ length: 10 }, () => {
   return {
     name: faker.name.firstName(),
     email: faker.internet.email(),
     password: faker.internet.password(),
+    address: faker.address.streetAddress(),
     createdAt: new Date(),
     updatedAt: new Date(),
   }
@@ -22,7 +23,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('clients', clients, {})
+    await queryInterface.bulkInsert('users', users, {})
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -32,6 +33,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('clients', null, {})
+    await queryInterface.bulkDelete('users', null, {})
   }
 };

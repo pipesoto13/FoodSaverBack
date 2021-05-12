@@ -8,7 +8,7 @@ const products = Array.from({ length: 10 }, () => {
     price: faker.commerce.price(),
     weight: faker.datatype.float(),
     expDate: faker.datatype.datetime(),
-    SellerId: Math.ceil(Math.random() * 10),
+    UserId: Math.ceil(Math.random() * 10),
     createdAt: new Date(),
     updatedAt: new Date(),
   }
