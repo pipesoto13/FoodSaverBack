@@ -24,14 +24,15 @@ module.exports = (sequelize, DataTypes) => {
 
   const userOps = {
     timestamps: true,
-    tableName: 'sellers',
+    tableName: 'users',
   }
 
-  const Seller = sequelize.define('Seller', userSchema, userOps)
+  const User = sequelize.define('User', userSchema, userOps)
 
-  Seller.associate = (db) => {
-    db.Seller.hasMany(db.Product)
+  User.associate = (db) => {
+    db.User.hasMany(db.Product)
+    db.User.hasMany(db.Order)
   }
 
-  return Seller
+  return User
 }

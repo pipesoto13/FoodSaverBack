@@ -1,4 +1,4 @@
-const { Product, Seller } = require('../models')
+const { Product, User } = require('../models')
 
 module.exports = {
   async create(req, res) {
@@ -6,17 +6,17 @@ module.exports = {
 
     const product = await Product.create(
       body,
-      { include: [Seller] }
+      { include: [User] }
     )
     console.log(Product)
 
-    product.setSeller(body.sellerId)
+    product.setUser(body.sellerId)
 
     res.status(201).json(product)
   },
   async list(req, res) {
     const products = await Product
-      .scope({ include: [Seller] })
+      .scope({ include: [User] })
       .findAll()
 
     res.status(200).json(products)
