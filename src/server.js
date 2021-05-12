@@ -10,7 +10,7 @@ const paymentRouter = require('./routes/payment')
 
 const port = process.env.PORT || 8000
 const app = express()
-sequelize.sync({force: true})
+sequelize.sync()
 
 app.use(express.json())
 app.use(cors())
