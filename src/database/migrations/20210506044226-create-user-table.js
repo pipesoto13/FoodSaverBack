@@ -30,10 +30,6 @@ module.exports = {
           type: Sequelize.DataTypes.STRING,
           allowNull: false,
         },
-        address: {
-          type: Sequelize.DataTypes.STRING,
-          allowNull: false,
-        },
         createdAt: Sequelize.DataTypes.DATE,
         updatedAt: Sequelize.DataTypes.DATE,
       }
