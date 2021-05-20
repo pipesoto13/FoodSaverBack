@@ -34,4 +34,9 @@ module.exports = {
     product = await product.update(body)
     res.status(200).json(product)
   },
+  async show(req, res) {
+    const { productId } = req.params
+    const product = await Product.findByPk(productId)
+    res.status(200).json(product)
+  },
 }
