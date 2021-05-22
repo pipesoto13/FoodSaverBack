@@ -13,7 +13,7 @@ const app = express()
 sequelize.sync()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({origin: '*'}))
 app.use(morgan('dev'))
 
 app.use('/users', userRouter)

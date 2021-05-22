@@ -18,6 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   }
 
   const userOps = {

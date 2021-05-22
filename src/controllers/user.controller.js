@@ -43,11 +43,26 @@ module.exports = {
     const user = await User.findByPk(userId)
     res.status(200).json(user)
   },
-  async update(req, res) {
+/*   async update(req, res) {
     const { body, params: { userId } } = req
     let user = await User.findByPk(userId)
     user = await user.update(body)
     res.status(200).json(user)
+  }, */
+  async update(req, res) {
+    try {
+      const {
+        body,
+        user,
+      } = req;
+      await User.update(body, {
+        where: { id: user }
+      });
+      const clientUpdate = await User.findByPk(user)
+      res.status(200).json({ message: 'client updated', clientUpdate });
+    } catch (error) {
+      res.status(400).json({ message: 'client could not be updated', error });
+    }
   },
   async destroy(req, res) {
     const { userId } = req.params

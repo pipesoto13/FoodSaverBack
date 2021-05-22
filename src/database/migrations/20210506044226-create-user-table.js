@@ -30,6 +30,10 @@ module.exports = {
           type: Sequelize.DataTypes.STRING,
           allowNull: false,
         },
+        photo: {
+          type: Sequelize.DataTypes.STRING,
+          allowNull: true,
+        },
         createdAt: Sequelize.DataTypes.DATE,
         updatedAt: Sequelize.DataTypes.DATE,
       }
