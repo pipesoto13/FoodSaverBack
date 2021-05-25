@@ -6,11 +6,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     price: {
       type: DataTypes.FLOAT,
-      allowNull: true,
+      allowNull: false,
+      defaultValue: 0,
     },
     weight: {
       type: DataTypes.FLOAT,
@@ -22,6 +23,18 @@ module.exports = (sequelize, DataTypes) => {
     },
     expDate: {
       type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
+    latLoc: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    longLoc: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
+    photo: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
   }

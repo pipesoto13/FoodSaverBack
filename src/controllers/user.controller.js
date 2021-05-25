@@ -43,12 +43,6 @@ module.exports = {
     const user = await User.findByPk(userId)
     res.status(200).json(user)
   },
-/*   async update(req, res) {
-    const { body, params: { userId } } = req
-    let user = await User.findByPk(userId)
-    user = await user.update(body)
-    res.status(200).json(user)
-  }, */
   async update(req, res) {
     try {
       const {

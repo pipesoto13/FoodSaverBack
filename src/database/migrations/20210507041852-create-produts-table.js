@@ -22,11 +22,12 @@ module.exports = {
         },
         description: {
           type: Sequelize.DataTypes.STRING,
-          allowNull: true,
+          allowNull: false,
         },
         price: {
           type: Sequelize.DataTypes.FLOAT,
-          allowNull: true,
+          allowNull: false,
+          defaultValue: 0,
         },
         weight: {
           type: Sequelize.DataTypes.FLOAT,
@@ -34,10 +35,22 @@ module.exports = {
         },
         address: {
           type: Sequelize.DataTypes.STRING,
-          allowNull: true,
+          allowNull: false,
         },
         expDate: {
           type: Sequelize.DataTypes.DATEONLY,
+          allowNull: false,
+        },
+        latLoc: {
+          type: Sequelize.DataTypes.FLOAT,
+          allowNull: false,
+        },        
+        longLoc: {
+          type: Sequelize.DataTypes.FLOAT,
+          allowNull: false,
+        },        
+        photo: {
+          type: Sequelize.DataTypes.STRING,
           allowNull: true,
         },
         SellerId: Sequelize.DataTypes.INTEGER,
