@@ -49,6 +49,11 @@ module.exports = {
           type: Sequelize.DataTypes.FLOAT,
           allowNull: false,
         },        
+        requested: {
+          type: Sequelize.DataTypes.BOOLEAN,
+          allowNull: false,
+          defaultValue: false,
+        },        
         photo: {
           type: Sequelize.DataTypes.STRING,
           allowNull: true,
