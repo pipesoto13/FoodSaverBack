@@ -39,4 +39,17 @@ module.exports = {
     const product = await Product.findByPk(productId)
     res.status(200).json(product)
   },
+  async filterByUser(req, res) {
+    try {
+      const {
+        user,
+      } = req;
+      const productsByUser = await Product.findAll({
+        where: { UserId: user }
+      });
+      res.status(200).json({ message: 'Products filtered', productsByUser });
+    } catch (error) {
+      res.status(400).json({ message: 'products could not be obtained', error });
+    }
+  },
 }
