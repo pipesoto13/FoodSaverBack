@@ -44,4 +44,13 @@ module.exports = {
     await order.destroy()
     res.status(200).json(order)
   },
+  async destroyByProductId(req, res) {
+    const { productId } = req.params
+    console.log(productId);
+    const order = await Order
+    .destroy({
+      where: {ProductId: productId}
+    })
+    res.status(200).json(order)
+  },
 }
