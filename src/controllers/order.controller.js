@@ -21,5 +21,27 @@ module.exports = {
       .findAll()
 
     res.status(200).json(orders)
-  }
+  },
+  async filterByUser(req, res) {
+    try {
+      const {
+        user,
+      } = req;
+      const ordersByUser = await Order
+      .scope({ include: [Product]})
+      .findAll({
+        where: { UserId: user }
+      });
+      res.status(200).json({ message: 'Orders filtered', ordersByUser });
+    } catch (error) {
+      res.status(400).json({ message: 'orders could not be obtained', error });
+    }
+  },
+  async destroy(req, res) {
+    const { orderId } = req.params
+    console.log(orderId);
+    const order = await Order.findByPk(orderId)
+    await order.destroy()
+    res.status(200).json(order)
+  },
 }
